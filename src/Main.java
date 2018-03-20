@@ -8,6 +8,10 @@ class Contact{
     String name;
     String email;
     String phonenumber;
+    Contact(){
+        this.name = "";
+        this.email = "test@email.com";
+    }
 }
 
 class ContactsManager {
