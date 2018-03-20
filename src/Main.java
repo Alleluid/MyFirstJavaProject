@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class TestClass{
     String name;
     int age;
@@ -23,15 +26,53 @@ class TestClass{
     }
 }
 
+class ClassRecord {
+    private String className;
+    private double gradeAverage;
+    ClassRecord(String className){
+        this.className = className;
+        gradeAverage = 0.0;
+    }
+    boolean isPassing(){
+        return gradeAverage > 50.0;
+    }
+    void setGradeAverage(double average){
+        this.gradeAverage = average;
+    }
+    String getClassName(){
+        return this.className;
+    }
+
+
+}
+
+class Student{
+    String name;
+    private ClassRecord englishRecord;
+    private ClassRecord mathRecord;
+    private ClassRecord scienceRecord;
+    Student(String name){
+        this.name = name;
+        englishRecord = new ClassRecord("English");
+        mathRecord = new ClassRecord("Math");
+        scienceRecord = new ClassRecord("Science");
+    }
+
+}
+
 public class Main {
     public static void main(String[] args) {
-        TestClass test1 = new TestClass();
+        List<Student> studentRecords = new ArrayList<>();
 
-        test1.setName("Fredrick");
-        test1.setAge(25);
-        test1.setMessage("I'm fred.");
+        studentRecords.add(new Student("Fred"));
+        studentRecords.add(new Student("Sally"));
+        studentRecords.add(new Student("Bob"));
+        studentRecords.add(new Student("June"));
 
-        test1.checkInfo();
+        System.out.println("Students in list:");
+        for (Student s: studentRecords) {
+            System.out.println(s.name);
+        }
 
 
     }
