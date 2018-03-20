@@ -6,3 +6,6 @@
 .idea/modules.xml
 .idea/misc.xml
 MyFirstJavaProject.iml
+.idea/workspace.xml
+*.class
+*.xml

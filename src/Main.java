@@ -1,26 +1,38 @@
+class TestClass{
+    String name;
+    int age;
+    String message;
+    char [] initials;
+    TestClass(){
+        name = "A B C";
+        age = 0;
+        message = "";
+    }
+
+    void setName(String name){
+        this.name = name;
+    }
+    void setAge(int age){
+        this.age = age;
+    }
+    void setMessage(String message){
+        this.message = message;
+    }
+    void checkInfo(){
+        System.out.println("Name: "+name+" Age: "+age+" Message: "+message);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
-}
+        TestClass test1 = new TestClass();
 
-class Contact{
-    String name;
-    String email;
-    String phonenumber;
-    Contact(){
-        this.name = "";
-        this.email = "test@email.com";
-    }
-}
+        test1.setName("Fredrick");
+        test1.setAge(25);
+        test1.setMessage("I'm fred.");
 
-class ContactsManager {
-    // Fields:
-    Contact [] myFriends;
-    int friendsCount;
-    //Constructor:
-    ContactsManager(){
-        this.friendsCount = 0;
-        this.myFriends = new Contact[500];
+        test1.checkInfo();
+
+
     }
 }
