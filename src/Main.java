@@ -32,10 +32,20 @@ class ClassRecord {
     private double gradeAverage;
     ClassRecord(String className){
         this.className = className;
-        gradeAverage = 0.0;
+        gradeAverage = Math.random()*100;
     }
     boolean isPassing(){
         return gradeAverage > 50.0;
+    }
+    String outputPassFail(){
+        if (isPassing()){
+            return "Pass";
+        } else {
+            return "Fail";
+        }
+    }
+    double getGradeAverage(){
+        return this.gradeAverage;
     }
     void setGradeAverage(double average){
         this.gradeAverage = average;
@@ -49,20 +59,23 @@ class ClassRecord {
 
 class Student{
     String name;
-    private ClassRecord englishRecord;
-    private ClassRecord mathRecord;
-    private ClassRecord scienceRecord;
+    public ClassRecord record1;
+    public ClassRecord record2;
+    public ClassRecord record3;
     Student(String name){
         this.name = name;
-        englishRecord = new ClassRecord("English");
-        mathRecord = new ClassRecord("Math");
-        scienceRecord = new ClassRecord("Science");
+        record1 = new ClassRecord("English");
+        record2 = new ClassRecord("Math");
+        record3 = new ClassRecord("Science");
     }
     String getName(){
         return name;
     }
     String getLowerName(){
         return name.toLowerCase();
+    }
+    void printInfo(ClassRecord cr){
+        System.out.println(cr.getClassName()+": "+cr.getGradeAverage()+" | "+cr.outputPassFail());
     }
 }
 
@@ -93,6 +106,7 @@ public class Main {
 
         //Running in cmd:
 
+        Student activeStudent = null;
         while (true) { //repeats until there is valid student name entered
             print("Students in list:");
             for (Student s: studentRecords) {
@@ -105,7 +119,6 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine().toLowerCase();
 
-            Student activeStudent = null;
 
             for (Student s: studentRecords) {
                 if (s.getLowerName().equals(input)) {
@@ -119,8 +132,17 @@ public class Main {
                 print("Sorry, student not found.");
             }
         }
+        newln(2);
+        print("Student's Info:");
+        print(activeStudent.getName());
+        newln();
+        print("Grade Averages: ");
+        activeStudent.printInfo(activeStudent.record1);
+        activeStudent.printInfo(activeStudent.record2);
+        activeStudent.printInfo(activeStudent.record3);
 
 
 
+z
     }
 }
