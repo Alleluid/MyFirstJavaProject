@@ -1,59 +1,6 @@
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-class ClassRecord {
-    private String className;
-    private double gradeAverage;
-    ClassRecord(String className){
-        this.className = className;
-        gradeAverage = Math.random()*100;
-    }
-    boolean isPassing(){
-        return gradeAverage > 50.0;
-    }
-    String outputPassFail(){
-        if (isPassing()){
-            return "Pass";
-        } else {
-            return "Fail";
-        }
-    }
-    double getGradeAverage(){
-        return this.gradeAverage;
-    }
-    void setGradeAverage(double average){
-        this.gradeAverage = average;
-    }
-    String getClassName(){
-        return this.className;
-    }
-
-
-}
-
-class Student{
-    String name;
-    public ClassRecord record1;
-    public ClassRecord record2;
-    public ClassRecord record3;
-    Student(String name){
-        this.name = name;
-        record1 = new ClassRecord("English");
-        record2 = new ClassRecord("Math");
-        record3 = new ClassRecord("Science");
-    }
-    String getName(){
-        return name;
-    }
-    String getLowerName(){
-        return name.toLowerCase();
-    }
-    void printInfo(ClassRecord cr){
-        System.out.println(cr.getClassName()+": "+new DecimalFormat("#.##").format(cr.getGradeAverage())+" | "+cr.outputPassFail());
-    }
-}
 
 public class Main {
     public static void print(String input){ //I'm lazy
