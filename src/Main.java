@@ -1,31 +1,7 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-class TestClass{
-    String name;
-    int age;
-    String message;
-    char [] initials;
-    TestClass(){
-        name = "A B C";
-        age = 0;
-        message = "";
-    }
-
-    void setName(String name){
-        this.name = name;
-    }
-    void setAge(int age){
-        this.age = age;
-    }
-    void setMessage(String message){
-        this.message = message;
-    }
-    void checkInfo(){
-        System.out.println("Name: "+name+" Age: "+age+" Message: "+message);
-    }
-}
 
 class ClassRecord {
     private String className;
@@ -75,7 +51,7 @@ class Student{
         return name.toLowerCase();
     }
     void printInfo(ClassRecord cr){
-        System.out.println(cr.getClassName()+": "+cr.getGradeAverage()+" | "+cr.outputPassFail());
+        System.out.println(cr.getClassName()+": "+new DecimalFormat("#.##").format(cr.getGradeAverage())+" | "+cr.outputPassFail());
     }
 }
 
@@ -143,6 +119,6 @@ public class Main {
 
 
 
-z
+
     }
 }
