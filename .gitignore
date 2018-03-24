@@ -1,11 +1,4 @@
-
-.idea/workspace.xml
-*.class
-.idea/vcs.xml
-.idea/modules.xml
-.idea/misc.xml
-MyFirstJavaProject.iml
+Alleiminders.iml
 out
-.idea/uiDesigner.xml
-.idea/artifacts/MyFirstJavaProject_jar.xml
-.idea/workspace.xml
+lib
+.idea
