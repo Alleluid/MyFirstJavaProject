@@ -1,0 +1,16 @@
+group 'alleluid'
+version '1.0.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile group: 'org.jfxtras', name: 'jfxtras-all', version: '8.0-r6'
+
+}

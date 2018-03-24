@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TreeView fx:id="mainTree" layoutX="8.0" layoutY="35.0" prefHeight="446.0" prefWidth="186.0" />
+      <TableView fx:id="mainTable" layoutX="202.0" layoutY="35.0" onMouseClicked="#onTableMouseClicked" prefHeight="446.0" prefWidth="789.0" tableMenuButtonVisible="true">
+        <columns>
+            <TableColumn fx:id="colLabel" prefWidth="147.0" text="Label">
+                <cellValueFactory>
+                    <PropertyValueFactory property="labelProp" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colDueDate" prefWidth="84.0" text="Due Date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dueDate" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn fx:id="colDueTime" prefWidth="72.0" text="Due Time">
+                <cellValueFactory>
+                    <PropertyValueFactory property="dueTime" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="colNotes" prefWidth="471.0" text="Notes">
+                <cellValueFactory>
+                    <PropertyValueFactory property="notesProp" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+          <items>
+              <FXCollections fx:id="mainCollection" fx:factory="observableArrayList">
+
+              </FXCollections>
+          </items>
+      </TableView>
+      <Button fx:id="button1" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="67.0" layoutY="511.0" mnemonicParsing="false" onAction="#onButtonAction" prefHeight="0.0" prefWidth="0.0" text="+" textOverrun="CLIP">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" layoutX="66.0" layoutY="554.0" text="Label" textAlignment="CENTER" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1000.0">
+        <menus>
+          <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
+                  <MenuItem fx:id="menuClear" mnemonicParsing="false" onAction="#onMenuClear" text="Clear Table" />
+                  <MenuItem fx:id="menuSaveToFile" mnemonicParsing="false" onAction="#onMenuSaveToFile" text="Save To File (JSON)" />
+                  <MenuItem fx:id="menuLoadFromFile" mnemonicParsing="false" onAction="#onMenuLoadFromFile" text="Load From File (JSON)" />
+            </items>
+          </Menu>
+          <Menu fx:id="menuEdit" mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="menuDelete" mnemonicParsing="false" onAction="#onMenuDelete" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="inputLabel" layoutX="139.0" layoutY="513.0" promptText="Label" />
+       <DatePicker fx:id="inputDueDate" layoutX="469.0" layoutY="513.0" prefHeight="25.0" prefWidth="173.0" promptText="Due" />
+       <TextField fx:id="inputNotes" layoutX="654.0" layoutY="513.0" prefHeight="25.0" prefWidth="306.0" promptText="Notes" />
+
+   </children>
+</AnchorPane>
